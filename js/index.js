@@ -22,17 +22,8 @@ function playMessage() {
   document.getElementById('speechBubble').style.display = 'block';
 }
 addNote()
-//dat.gui:
-/*
-var Controls = function() {
-    this.roomlight = 0
-	};
 
-	var control = new Controls(),
-		gui = new dat.GUI();
-    
-    gui.add(control, 'roomlight', 0, 100).name('Room Lighting')
-*/
+
 //Create elements here:
 function deg(i) {
   return i * Math.PI / 180
@@ -540,19 +531,17 @@ function mainloop() {
     lighterLight.intensity = intensity
     //lightbulb.intensity = control.roomlight / 100
   }
-  playMessage();
+  //playMessage();
   // Music
-
   backgroundMusic.play().fadeIn().loop();
 }
+
 render();
 window.addEventListener('resize', onWindowResize, false);
 
 function onWindowResize() {
-
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
 
   renderer.setSize(window.innerWidth, window.innerHeight);
-
 }
