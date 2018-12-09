@@ -22,7 +22,17 @@
  <!--  <div id="speechBubble">
     <p>Hello everybody. I am a robot with a message:</p>
     <p>"Happy Holidays to all my Pearson colleagues! And have a great New Year!"</p>
-  </div>-->
-  <button style="bottom:0" id="open" class="ui fa fa-envelope button button3" onclick="alert('Merry Christmas')"> New Mail!</button>
+  </div>--><br><br>
+  heyyy<div class="popup ui fa fa-envelope button button3" onclick="myFunction()">New Mail
+            <span class="popuptext" id="myPopup">Merry Christmas!</span>
+  </div>
+
+  <script>
+      // When the user clicks on div, open the popup
+      function myFunction() {
+          var popup = document.getElementById("myPopup");
+          popup.classList.toggle("show");
+      }
+      </script>
 </body>
 </html>
