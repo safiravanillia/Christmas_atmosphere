@@ -18,10 +18,10 @@ var backgroundMusic = new buzz.sound('media/Jingle_Bells_Jazzy', {
   loop: true
 });
 
-function playMessage() {
-  document.getElementById('speechBubble').style.display = 'block';
-}
-addNote()
+//function playMessage() {
+//  document.getElementById('speechBubble').style.display = 'block';
+//}
+//addNote()
 
 
 //Create elements here:
@@ -322,6 +322,7 @@ for (var i = 0; i < 500; i++) {
 }
 var tree = newTree()
 
+
 var presentColors = ['red', 'green', 'lime', 'blue', 'yellow']
 var presents = []
 function newPresent() {
@@ -457,6 +458,7 @@ function newSnow() {
 }
 var snow = []
 var nextSnow = 0
+
 var geometry = new THREE.OctahedronGeometry(5, 0)
 var material = new THREE.MeshBasicMaterial({ color: 'yellow' });
 var star = new THREE.Mesh(geometry, material)
@@ -467,6 +469,14 @@ var starlight;
 starlight = new THREE.PointLight('yellow', 0.5, 50);
 starlight.position.y = 78
 scene.add(starlight);
+
+var geometry = new THREE.OctahedronGeometry(5, 0)
+var material = new THREE.MeshBasicMaterial({ color: 'red' });
+var star2 = new THREE.Mesh(geometry, material)
+scene.add(star2)
+star2.position.y = 80
+
+
 //end of elements
 camera.position.x = 130;
 camera.position.y = 30
@@ -491,7 +501,10 @@ camera.lookAt(lookAt)
 var render = function () {
   requestAnimationFrame(render);
   mainloop()
+  // Music
+  backgroundMusic.play().fadeIn().loop();
   renderer.clear();
+
   renderer.render(scene, camera);
   renderer.render(lighterScene, camera);
 };
@@ -532,12 +545,8 @@ function mainloop() {
     //lightbulb.intensity = control.roomlight / 100
   }
   //playMessage();
-  // Music
-  backgroundMusic.play().fadeIn().loop();
-}
 
-render();
-window.addEventListener('resize', onWindowResize, false);
+}
 
 function onWindowResize() {
   camera.aspect = window.innerWidth / window.innerHeight;
@@ -545,3 +554,7 @@ function onWindowResize() {
 
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
+
+render();
+
+window.addEventListener('resize', onWindowResize, false);
