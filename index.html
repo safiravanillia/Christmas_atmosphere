@@ -16,23 +16,22 @@
   <script src='js/pbwwkn.js'></script>
   <script src='js/buzz.js'></script>
   <script src="js/index.js"></script>
-  <script src="http://threejs.org/examples/js/loaders/OBJLoader.js"></script>
-  <script src="js/MTLLoader.js"></script>
+  <script src="js/threex.js"></script>
 
- <!--  <div id="speechBubble">
-    <p>Hello everybody. I am a robot with a message:</p>
-    <p>"Happy Holidays to all my Pearson colleagues! And have a great New Year!"</p>
-  </div>--><br><br>
-  heyyy<div class="popup ui fa fa-envelope button button3" onclick="myFunction()">New Mail
-            <span class="popuptext" id="myPopup">Merry Christmas!</span>
+  <div class="ui  button button3 fa fa-envelope" onclick="myFunction()" style="font-size:30px">
   </div>
+  <div id="speechBubble">
+    <p>Hello everybody, we send this messages to you:</p>
+    <p>"Happy Holidays to all my friends! May this holiday season sparkle and shine"</p>
+  </div><br><br>
+
 
   <script>
-      // When the user clicks on div, open the popup
-      function myFunction() {
-          var popup = document.getElementById("myPopup");
-          popup.classList.toggle("show");
-      }
-      </script>
+    // When the user clicks on div, open the popup
+    function myFunction() {
+      document.getElementById("speechBubble").style.display = 'block';
+    }
+  </script>
 </body>
+
 </html>
